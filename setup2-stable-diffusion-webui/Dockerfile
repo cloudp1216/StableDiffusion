@@ -10,6 +10,7 @@ RUN set -x \
         && conda activate \
         && git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git \
         && cd stable-diffusion-webui \
+        && mkdir -p outputs \
         && sed 's/start()/#start()/g' launch.py -i \
         && python -m venv venv \
 	&& . venv/bin/activate \

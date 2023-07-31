@@ -1,1 +1,1 @@
-### Sttble Diffusion WebUI in Docker 
+### Stable Diffusion WebUI in Docker
