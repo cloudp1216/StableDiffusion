@@ -46,7 +46,7 @@ cd stable-diffusion-webui/
 ./webui.sh --xformers --listen
 ```
 
-#### 7、通过浏览器访问`http://x.x.x.x:7890`打开界面：
+#### 7、通过浏览器访问`http://x.x.x.x:7860`打开界面：
 ![](./img/ui.png)
 
 
