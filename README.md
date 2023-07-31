@@ -53,14 +53,14 @@ ls models/Stable-diffusion/
 
 
 ## 四、访问stable-diffusion-webui
-#### 5、启动stable-diffusion-webui：
+#### 1、启动stable-diffusion-webui：
 ```shell
 docker exec -it webui bash
 cd stable-diffusion-webui/
 ./webui.sh --xformers --listen
 ```
 
-#### 7、通过浏览器访问`http://x.x.x.x:7860`打开`stable-diffusion-webui`界面：
+#### 2、通过浏览器访问`http://x.x.x.x:7860`打开`stable-diffusion-webui`界面：
 ![](./img/ui.png)
 
 
