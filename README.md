@@ -16,7 +16,7 @@ docker build -t anaconda3:2023.03-1 .
 ```
 
 ### 三、构建webui（stable-diffusion-webui）镜像
-#### 1、下载`torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl`包到torch目录下，加速镜像构建，下载命令：
+#### 1、提前下载`torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl`包到torch目录下，加速镜像构建，下载命令：
 ```shell
 curl -O https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl
 ```
@@ -33,7 +33,7 @@ RUN set -x \
         && . venv/bin/activate \
         && export HTTP_PROXY="http://x.x.x.x:1080" \    # 添加此项
         && export HTTPS_PROXY="http://x.x.x.x:1080" \   # 添加此项
-        && export NO_PROXY="localhost,127.0.0.0" \      # 添加此项
+        && export NO_PROXY="localhost,127.0.0.1" \      # 添加此项
         && pip install --upgrade pip \
         ...
 ```
@@ -62,6 +62,5 @@ cd stable-diffusion-webui/
 
 #### 2、通过浏览器访问`http://x.x.x.x:7860`打开`stable-diffusion-webui`界面：
 ![](./img/ui.png)
-
 
 
