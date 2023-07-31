@@ -16,14 +16,14 @@ curl -O https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp310-cp310-l
 docker build -t webui .
 ```
 ```shell
-注意，打包过程中如果出现问题，请编辑Dockerfile使用加速：
+注意，构建过程中如果出现问题，请编辑Dockerfile添加以下内容，开启加速：
 RUN set -x \
         ...
         && python -m venv venv \
         && . venv/bin/activate \
-        && export HTTP_PROXY="http://x.x.x.x:1080" \
-        && export HTTPS_PROXY="http://x.x.x.x:1080" \
-        && export NO_PROXY="localhost,127.0.0.0" \
+        && export HTTP_PROXY="http://x.x.x.x:1080" \    # 添加此项
+        && export HTTPS_PROXY="http://x.x.x.x:1080" \   # 添加此项
+        && export NO_PROXY="localhost,127.0.0.0" \      # 添加此项
         && pip install --upgrade pip \
         ...
 ```
@@ -39,7 +39,7 @@ ls models/Stable-diffusion/
  majicmixRealistic_v5.safetensors
 ```
 
-#### 6、启动
+#### 6、启动stable-diffusion-webui：
 ```shell
 docker exec -it webui bash
 cd stable-diffusion-webui/
