@@ -3,6 +3,7 @@
 docker build -t webui .
 
 
+```shell
 注意，打包过程中如果出现问题，请使用加速：
 RUN set -x \
         ...
@@ -13,5 +14,6 @@ RUN set -x \
         && export NO_PROXY="localhost,127.0.0.0" \
         && pip install --upgrade pip \
         ...
+```
 
 
