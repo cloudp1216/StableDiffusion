@@ -21,9 +21,12 @@ fi
 docker run -d --name webui --gpus all -p 7860:7860 -p 2222:22 \
         -v $models:/home/webui/stable-diffusion-webui/models \
         -v $outputs:/home/webui/stable-diffusion-webui/outputs \
-	webui sleep infinity
+        webui sleep infinity
 
 
-echo "Please enter the container to execute: ./webui.sh --xformers --listen"
+echo "Please execute:"
+echo "    1. docker exec -it webui bash"
+echo "    2. cd stable-diffusion-webui"
+echo "    3. ./webui.sh --xformers --listen"
 
 
