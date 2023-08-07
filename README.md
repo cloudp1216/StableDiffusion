@@ -56,8 +56,8 @@ ls models/Stable-diffusion/
 #### 1、启动stable-diffusion-webui：
 ```shell
 docker exec -it webui bash
-cd stable-diffusion-webui/
-./webui.sh --xformers --listen
+cd stable-diffusion-webui
+./webui.sh --xformers --listen --enable-insecure-extension-access --theme=dark
 ```
 
 #### 2、通过浏览器访问`http://x.x.x.x:7860`打开`stable-diffusion-webui`界面：
