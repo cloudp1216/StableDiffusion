@@ -13,7 +13,7 @@ RUN set -x \
         && echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse" >> /etc/apt/sources.list \
         && apt clean all && apt update \
         && export DEBIAN_FRONTEND=noninteractive \
-        && apt install -y build-essential vim vim-common git curl primus-libs tzdata net-tools openssh-server sudo xdg-utils iproute2 \
+        && apt install -y build-essential vim vim-common git curl primus-libs tzdata net-tools openssh-server sudo xdg-utils iproute2 iputils-ping \
         && ln -svf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone \
         && echo "/home/webui/anaconda3/lib" > /etc/ld.so.conf.d/anaconda3.conf \
         && useradd -m -s /bin/bash -G sudo webui \ 
