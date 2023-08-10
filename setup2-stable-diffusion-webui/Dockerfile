@@ -13,9 +13,9 @@ RUN set -x \
         && mkdir -p outputs \
         && sed 's/start()/#start()/g' launch.py -i \
         && python -m venv venv \
-	&& . venv/bin/activate \
+        && . venv/bin/activate \
         && pip install --upgrade pip \
-	&& pip install /tmp/torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl \
+        && pip install /tmp/torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl \
         && bash webui.sh --skip-torch-cuda-test \
         && sed 's/#start()/start()/g' launch.py -i
 
@@ -23,5 +23,6 @@ EXPOSE 7860
 
 WORKDIR /home/webui
 
+ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["sleep", "infinity"]
 

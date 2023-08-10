@@ -1,8 +1,9 @@
 FROM ubuntu:20.04
 
-COPY deb/ca-certificates_20230311ubuntu0.20.04.1_all.deb /tmp
-COPY deb/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb /tmp
-COPY deb/openssl_1.1.1f-1ubuntu2.19_amd64.deb /tmp
+COPY pkgs/ca-certificates_20230311ubuntu0.20.04.1_all.deb /tmp
+COPY pkgs/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb /tmp
+COPY pkgs/openssl_1.1.1f-1ubuntu2.19_amd64.deb /tmp
+COPY pkgs/tini /usr/bin
 
 RUN set -x \
         && dpkg -i /tmp/*.deb \
@@ -27,5 +28,6 @@ RUN set -x \
         && echo "conda activate" >> /home/webui/.bashrc \
         && unlink Anaconda3-2023.03-1-Linux-x86_64.sh
 
+ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["/bin/bash"]
 
