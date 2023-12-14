@@ -3,7 +3,6 @@
 
 path=$(cd `dirname $0`; pwd)
 
-
 models="$path/models"
 outputs="$path/outputs"
 embeddings="$path/embeddings"
@@ -15,26 +14,23 @@ dirs=(
     $extensions
 )
 
-
 for i in ${dirs[@]}
 do
     if [ -d "$i" ]; then
         mkdir -p $i
-        chmod 777 $i
+        chown 5000:5000 $i
     fi
 done
 
-
-docker run -d --name webui --gpus all -p 7860:7860 -p 2222:22 \
-        #-e HTTP_PROXY="http://x.x.x.x:1080" \
-        #-e HTTPS_PROXY="http://x.x.x.x:1080" \
-        #-e NO_PROXY="localhost,127.0.0.1" \
-        -v $models:/home/webui/stable-diffusion-webui/models \
-        -v $outputs:/home/webui/stable-diffusion-webui/outputs \
-        -v $embeddings:/home/webui/stable-diffusion-webui/embeddings \
-        -v $extensions:/home/webui/stable-diffusion-webui/extensions \
-        webui sleep infinity
-
+docker run -d --restart=unless-stopped --name webui --gpus all -p 7860:7860 -p 2222:22 \
+    #-e HTTP_PROXY="http://x.x.x.x:1080" \
+    #-e HTTPS_PROXY="http://x.x.x.x:1080" \
+    #-e NO_PROXY="localhost,127.0.0.1" \
+    -v $models:/home/webui/stable-diffusion-webui/models \
+    -v $outputs:/home/webui/stable-diffusion-webui/outputs \
+    -v $embeddings:/home/webui/stable-diffusion-webui/embeddings \
+    -v $extensions:/home/webui/stable-diffusion-webui/extensions \
+    webui sleep infinity
 
 echo "Please execute:"
 echo "    1. docker exec -it webui bash"

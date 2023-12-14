@@ -16,7 +16,8 @@ RUN set -x \
         && apt install -y build-essential vim vim-common git curl primus-libs tzdata net-tools openssh-server sudo xdg-utils iproute2 iputils-ping \
         && ln -svf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone \
         && echo "/home/webui/anaconda3/lib" > /etc/ld.so.conf.d/anaconda3.conf \
-        && useradd -m -s /bin/bash -G sudo webui \ 
+        && groupadd -g 5000 webui \
+        && useradd -m -s /bin/bash -u 5000 -g webui -G sudo webui \
         && echo "webui:webui" | chpasswd
 
 USER webui 
