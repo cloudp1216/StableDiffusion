@@ -1,6 +1,6 @@
 
 
-# Stable Diffusion WebUI in Docker
+# Stable Diffusion WebUI In Docker
 
 
 ### 一、基础环境要求
@@ -19,7 +19,7 @@ docker build -t anaconda3:2023.03-1 .
 
 
 ### 三、构建webui（stable-diffusion-webui）镜像
-#### 1、提前下载`torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl`包到torch目录下，加速镜像构建，下载命令：
+#### 1、提前下载`torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl`包到torch目录下，加速镜像构建，命令：
 ```shell
 curl -O https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl
 mv torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl
@@ -52,8 +52,9 @@ RUN set -x \
 
 #### 2、上传模型到`models/Stable-diffusion/`目录下：
 ```shell
-ls models/Stable-diffusion/
- majicmixRealistic_v5.safetensors
+ls -lh models/Stable-diffusion/
+total 2.3G
+-rwxr-xr-x 1 root root 2.3G Dec 14 17:01 majicmixRealistic_v5.safetensors
 ```
 
 
@@ -66,6 +67,6 @@ cd stable-diffusion-webui
 ```
 
 #### 2、通过浏览器访问`http://x.x.x.x:7860`打开`stable-diffusion-webui`界面：
-![](./img/ui.png)
+![](./img/ui.jpg)
 
 
