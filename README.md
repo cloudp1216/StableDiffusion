@@ -22,6 +22,7 @@ docker build -t anaconda3:2023.03-1 .
 #### 1、提前下载`torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl`包到torch目录下，加速镜像构建，下载命令：
 ```shell
 curl -O https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl
+mv torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl
 ```
 
 #### 2、构建webui镜像：
