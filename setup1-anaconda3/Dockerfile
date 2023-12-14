@@ -23,7 +23,7 @@ RUN set -x \
 USER webui 
 RUN set -x \
         && cd ~ \
-        && curl -O https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.03-1-Linux-x86_64.sh \
+        && curl -O --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.03-1-Linux-x86_64.sh \
         && bash Anaconda3-2023.03-1-Linux-x86_64.sh -b -p /home/webui/anaconda3 \
         && echo ". /home/webui/anaconda3/etc/profile.d/conda.sh" >> /home/webui/.bashrc \
         && echo "conda activate" >> /home/webui/.bashrc \
