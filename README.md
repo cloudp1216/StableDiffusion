@@ -8,7 +8,7 @@
 - CUDA：>=11.8
 - 其它：安装docker、nvidia-docker2
 
-( https://github.com/AUTOMATIC1111/stable-diffusion-webui )
+  ( https://github.com/AUTOMATIC1111/stable-diffusion-webui )
 
 
 ### 二、构建anaconda3镜像
