@@ -18,7 +18,7 @@ RUN set -x \
         && pip install --upgrade pip \
         && pip install /tmp/torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl \
         && bash webui.sh --skip-torch-cuda-test \
-        && pip install -U -I --no-deps xformers==0.0.20 --prefer-binary \
+        && pip install -U -I --no-deps xformers==0.0.20 --prefer-binary \            # 注：xformers==0.0.20 从 cat modules/launch_utils.py | grep 'xformers' 命令中获取
         && sed 's/#start()/start()/g' launch.py -i
 
 EXPOSE 7860
