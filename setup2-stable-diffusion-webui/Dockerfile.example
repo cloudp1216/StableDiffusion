@@ -22,6 +22,8 @@ RUN set -x \
         && pip install /tmp/torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl \
         && bash webui.sh --skip-torch-cuda-test \
         && pip install -U -I --no-deps xformers==0.0.20 --prefer-binary \            # 注：xformers==0.0.20 从 cat modules/launch_utils.py | grep 'xformers' 命令中获取
+        && pip install rich                                                          # After Detailer 扩展依赖
+        && pip install chardet PyExecJS lxml pathos cryptography openai boto3 aliyun-python-sdk-core aliyun-python-sdk-alimt \    # prompt-all-in-one 扩展依赖
         && sed 's/#start()/start()/g' launch.py -i
 
 EXPOSE 7860

@@ -20,4 +20,7 @@
   After Detailer 人脸及手部修复
 
 
+- https://github.com/Coyote-A/ultimate-upscale-for-automatic1111 </p>
+  Ultimate SD Upscale 图片放大
+
 
