@@ -13,7 +13,7 @@
 
 
 - https://github.com/Mikubill/sd-webui-controlnet </p>
-  ControlNet （需要额外下载ControlNet模型）
+  ControlNet （ 需要额外下载ControlNet模型：https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main ）
 
 
 - https://github.com/Bing-su/adetailer </p>
