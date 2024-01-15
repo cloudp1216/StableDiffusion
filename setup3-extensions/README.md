@@ -12,4 +12,12 @@
   提示词插件
 
 
+- https://github.com/Mikubill/sd-webui-controlnet </p>
+  ControlNet （需要额外下载ControlNet模型）
+
+
+- https://github.com/Bing-su/adetailer </p>
+  After Detailer 人脸及手部修复
+
+
 
