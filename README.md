@@ -63,7 +63,7 @@ total 2.3G
 ```shell
 docker exec -it webui bash
 cd stable-diffusion-webui
-./webui.sh --xformers --listen --enable-insecure-extension-access --theme=dark
+./webui.sh --xformers --listen --skip-version-check --skip-prepare-environment --enable-insecure-extension-access --theme=dark
 ```
 
 #### 2、通过浏览器访问`http://x.x.x.x:7860`打开`stable-diffusion-webui`界面：
