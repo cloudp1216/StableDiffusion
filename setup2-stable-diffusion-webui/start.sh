@@ -36,7 +36,7 @@ if [ `docker ps -a|grep webui -c 2>/dev/null` == "0" ]; then
     echo "Please execute:"
     echo "    1. docker exec -it webui bash"
     echo "    2. cd stable-diffusion-webui"
-    echo "    3. ./webui.sh --xformers --listen --enable-insecure-extension-access --theme=dark"
+    echo "    3. ./webui.sh --xformers --listen --skip-version-check --skip-prepare-environment --enable-insecure-extension-access --theme=dark"
 else
     echo "Containers webui is existed."
 fi
