@@ -27,7 +27,7 @@ mv torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl torch-2.0.1+cu118-cp310-cp31
 
 #### 2、构建webui镜像：
 ```shell
-docker build -t webui .
+docker build -t webui:1.7.0 .
 ```
 ```shell
 注意，构建过程中如果出现问题，请编辑Dockerfile添加以下内容，开启加速：
@@ -44,7 +44,14 @@ RUN set -x \
 ```
 
 
-### 四、上传模型
+### 四、扩展webui插件
+#### 1、扩展webui插件
+```shell
+docker build -t webui .
+```
+
+
+### 五、上传模型
 #### 1、运行容器：
 ```shell
 ./start.sh
@@ -58,12 +65,12 @@ total 2.3G
 ```
 
 
-### 五、访问stable-diffusion-webui
+### 六、访问stable-diffusion-webui
 #### 1、启动stable-diffusion-webui：
 ```shell
 docker exec -it webui bash
 cd stable-diffusion-webui
-./webui.sh --xformers --listen --skip-version-check --skip-prepare-environment --enable-insecure-extension-access --theme=dark
+./webui.sh --xformers --listen --skip-version-check --enable-insecure-extension-access --theme=dark
 ```
 
 #### 2、通过浏览器访问`http://x.x.x.x:7860`打开`stable-diffusion-webui`界面：

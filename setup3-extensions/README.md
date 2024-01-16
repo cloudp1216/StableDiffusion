@@ -24,7 +24,3 @@
   Ultimate SD Upscale 图片放大
 
 
-- https://github.com/modelscope/facechain </p>
-  FaceChain 是一个可以用来打造个人数字形象的深度学习模型工具。用户仅需要提供最低一张照片即可获得独属于自己的个人形象数字替身。FaceChain支持在gradio的界面中使用模型训练和推理能力、支持资深开发者使用python脚本进行训练推理，也支持在sd webui中安装插件使用。
-
-
