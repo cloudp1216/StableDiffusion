@@ -15,16 +15,16 @@ RUN set -x \
         && python -m venv venv \
         && . venv/bin/activate \
         && echo ". stable-diffusion-webui/venv/bin/activate" >> ~/.bashrc \
+        # 启用代理
+        # && export HTTP_PROXY="http://x.x.x.x:1080" \
+        # && export HTTPS_PROXY="http://x.x.x.x:1080" \
+        # && export NO_PROXY="localhost,127.0.0.1" \
         && pip install --upgrade pip \
         && pip install /tmp/torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl \
         && bash webui.sh --skip-torch-cuda-test \
+        # 注：xformers==0.0.20 从 cat modules/launch_utils.py | grep 'xformers' 命令中获取
         && pip install -U -I --no-deps xformers==0.0.20 --prefer-binary \
-        && pip install rich
-        && pip install chardet PyExecJS lxml pathos cryptography openai boto3 aliyun-python-sdk-core aliyun-python-sdk-alimt \
         && sed 's/#start()/start()/g' launch.py -i
-        && echo "#!/bin/bash" >> start.sh
-        && echo "./webui.sh --xformers --listen --skip-version-check --skip-prepare-environment --enable-insecure-extension-access --theme=dark" >> start.sh
-        && chmod 755 start.sh
 
 EXPOSE 7860
 
