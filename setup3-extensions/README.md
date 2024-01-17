@@ -5,7 +5,7 @@
 
 
 - https://github.com/Physton/sd-webui-prompt-all-in-one  </p>
-  sd-webui-prompt-all-in-one 是一个基于 stable-diffusion-webui 的扩展，旨在提高提示词/反向提示词输入框的使用体验。它拥有更直观、强大的输入界面功能，它提供了自动翻译、历史记录和收藏等功能，它支持多种语言，满足不同用户的需求。
+  sd-webui-prompt-all-in-one 基于 stable-diffusion-webui 的扩展，旨在提高提示词/反向提示词输入框的使用体验，拥有更直观、强大的输入界面功能，提供了自动翻译、历史记录和收藏等功能。
 
 
 - https://github.com/thisjam/sd-webui-oldsix-prompt </p>
@@ -21,6 +21,34 @@
 
 
 - https://github.com/Coyote-A/ultimate-upscale-for-automatic1111 </p>
-  Ultimate SD Upscale 图片放大
+  Ultimate SD Upscale 图像放大
+
+
+- https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111 </p>
+  用 Tiled Diffusion & VAE 生成大型图像
+
+
+- https://github.com/picobyte/stable-diffusion-webui-wd14-tagger </p>
+  WD1.4 Tag 反推
+
+
+- https://github.com/s0md3v/sd-webui-roop </p>
+  换脸
+
+
+- https://github.com/Uminosachi/sd-webui-inpaint-anything </p>
+  蒙版修复，例如：删除物体、替换物体、替换背景
+
+
+- https://github.com/continue-revolution/sd-webui-segment-anything </p>
+  图像分割
+
+
+- https://github.com/pkuliyi2015/sd-webui-stablesr </p>
+  StableSR 图像放大
+
+
+- https://https://github.com/fkunn1326/openpose-editor </p>
+  OpenPose 编辑
 
 

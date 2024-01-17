@@ -12,7 +12,6 @@
 
 
 ### 二、构建anaconda3镜像
-#### 1、构建anaconda3镜像：
 ```shell
 docker build -t anaconda3:2023.03-1 .
 ```
@@ -45,7 +44,6 @@ RUN set -x \
 
 
 ### 四、扩展webui插件
-#### 1、扩展webui插件
 ```shell
 docker build -t webui .
 ```

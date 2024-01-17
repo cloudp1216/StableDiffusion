@@ -5,6 +5,9 @@ USER webui
 RUN set -x \
         && cd /home/webui/stable-diffusion-webui \
         && sed 's/start()/#start()/g' launch.py -i \
+        && export HTTP_PROXY="http://x.x.x.x:1080" \                     # 添加此项
+        && export HTTPS_PROXY="http://x.x.x.x.:1080" \                   # 添加此项
+        && export NO_PROXY="localhost,127.0.0.1" \                       # 添加此项
         && cd extensions \
         && git clone https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN.git \
         && git clone https://github.com/Physton/sd-webui-prompt-all-in-one.git \
