@@ -1,7 +1,11 @@
 
 
 - https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN  </p>
-  简体中文语言包 
+  简体中文语言包 1
+
+
+- https://github.com/hanamizuki-ai/stable-diffusion-webui-localization-zh_Hans </p>
+  简体中文语言包 2
 
 
 - https://github.com/Physton/sd-webui-prompt-all-in-one  </p>
@@ -50,5 +54,9 @@
 
 - https://https://github.com/fkunn1326/openpose-editor </p>
   OpenPose 编辑
+
+
+- https://github.com/kohya-ss/sd-webui-additional-networks </p>
+  使用 sd-script 脚本训练的lora模型
 
 

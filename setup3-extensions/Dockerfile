@@ -7,6 +7,7 @@ RUN set -x \
         && sed 's/start()/#start()/g' launch.py -i \
         && cd extensions \
         && git clone https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN.git \
+        && git clone https://github.com/hanamizuki-ai/stable-diffusion-webui-localization-zh_Hans.git \
         && git clone https://github.com/Physton/sd-webui-prompt-all-in-one.git \
         && git clone https://github.com/thisjam/sd-webui-oldsix-prompt.git \
         && git clone https://github.com/Mikubill/sd-webui-controlnet.git \
@@ -19,6 +20,7 @@ RUN set -x \
         && git clone https://github.com/continue-revolution/sd-webui-segment-anything.git \
         && git clone https://github.com/pkuliyi2015/sd-webui-stablesr.git \
         && git clone https://github.com/fkunn1326/openpose-editor.git \
+        && git clone https://github.com/kohya-ss/sd-webui-additional-networks.git \
         && cd /home/webui/stable-diffusion-webui \
         && bash webui.sh --skip-torch-cuda-test --enable-insecure-extension-access \
         && bash webui.sh --skip-torch-cuda-test --enable-insecure-extension-access \
