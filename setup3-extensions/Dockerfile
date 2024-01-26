@@ -21,6 +21,7 @@ RUN set -x \
         && git clone https://github.com/pkuliyi2015/sd-webui-stablesr.git \
         && git clone https://github.com/fkunn1326/openpose-editor.git \
         && git clone https://github.com/kohya-ss/sd-webui-additional-networks.git \
+        && git clone https://github.com/Gourieff/sd-webui-reactor.git \
         && cd /home/webui/stable-diffusion-webui \
         && bash webui.sh --skip-torch-cuda-test --enable-insecure-extension-access \
         && bash webui.sh --skip-torch-cuda-test --enable-insecure-extension-access \
