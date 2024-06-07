@@ -5,7 +5,7 @@
 
 ### 一、基础环境要求
 - 操作系统：Ubuntu 20.04 LTS 服务器或桌面版
-- CUDA：>=11.8
+- CUDA：>=12.1
 - 其它：安装docker、nvidia-docker2
 
   ( https://github.com/AUTOMATIC1111/stable-diffusion-webui )
