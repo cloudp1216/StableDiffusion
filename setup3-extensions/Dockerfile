@@ -1,4 +1,4 @@
-FROM webui:1.7.0
+FROM webui:1.9.4
 
 USER webui
 
@@ -21,9 +21,10 @@ RUN set -x \
         && git clone https://github.com/pkuliyi2015/sd-webui-stablesr.git \
         && git clone https://github.com/fkunn1326/openpose-editor.git \
         && git clone https://github.com/kohya-ss/sd-webui-additional-networks.git \
-        && git clone https://github.com/Gourieff/sd-webui-reactor.git \
+        && . ~/stable-diffusion-webui/venv/bin/activate \
         && cd /home/webui/stable-diffusion-webui \
         && bash webui.sh --skip-torch-cuda-test --enable-insecure-extension-access \
+        && pip install basicsr llama_cpp_python \
         && bash webui.sh --skip-torch-cuda-test --enable-insecure-extension-access \
         && sed 's/#start()/start()/g' launch.py -i 
 

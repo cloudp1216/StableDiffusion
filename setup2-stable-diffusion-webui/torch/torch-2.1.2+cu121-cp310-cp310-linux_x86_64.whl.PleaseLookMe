@@ -1,0 +1,7 @@
+
+
+注意：torch-2.1.2+cu121-cp310-cp310-linux_x86_64.whl 包请提前下载到此目录下，加速构建，下载命令：
+
+curl -o torch-2.1.2+cu121-cp310-cp310-linux_x86_64.whl -O https://download.pytorch.org/whl/cu121/torch-2.1.2%2Bcu121-cp310-cp310-linux_x86_64.whl
+
+

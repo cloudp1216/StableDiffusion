@@ -1,6 +1,6 @@
 FROM anaconda3:2023.03-1
 
-COPY torch/torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl /tmp
+COPY torch/torch-2.1.2+cu121-cp310-cp310-linux_x86_64.whl /tmp
 
 USER webui
 
@@ -8,17 +8,17 @@ RUN set -x \
         && cd ~ \
         && . anaconda3/etc/profile.d/conda.sh \
         && conda activate \
-        && git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git \
+        && git clone -b v1.9.4 --depth=1 https://github.com/AUTOMATIC1111/stable-diffusion-webui.git \
         && cd stable-diffusion-webui \
         && mkdir -p outputs \
         && sed 's/start()/#start()/g' launch.py -i \
         && python -m venv venv \
         && . venv/bin/activate \
-        && echo ". stable-diffusion-webui/venv/bin/activate" >> ~/.bashrc \
+        && echo ". ~/stable-diffusion-webui/venv/bin/activate" >> ~/.bashrc \
         && pip install --upgrade pip \
-        && pip install /tmp/torch-2.0.1+cu118-cp310-cp310-linux_x86_64.whl \
+        && pip install /tmp/torch-2.1.2+cu121-cp310-cp310-linux_x86_64.whl \
         && bash webui.sh --skip-torch-cuda-test \
-        && pip install -U -I --no-deps xformers==0.0.20 --prefer-binary \
+        && pip install -U -I --no-deps xformers==0.0.23.post1 --prefer-binary \
         && sed 's/#start()/start()/g' launch.py -i \
         && echo "#!/bin/bash" >> start.sh \
         && echo "exec ./webui.sh --xformers --listen --skip-version-check --enable-insecure-extension-access --theme=dark" >> start.sh \

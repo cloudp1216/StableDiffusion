@@ -60,7 +60,3 @@
   使用 sd-script 脚本训练的lora模型
 
 
-- https://github.com/Gourieff/sd-webui-reactor </p>
-  换脸
-
-
