@@ -1,6 +1,6 @@
 FROM anaconda3:2023.03-1
 
-COPY torch/torch-2.1.2+cu121-cp310-cp310-linux_x86_64.whl /tmp          # 注意：torch及对应版本从 modules/launch_utils.py 代码中获取
+COPY torch/torch-2.1.2+cu121-cp310-cp310-linux_x86_64.whl /tmp          # 注意：torch 对应版本从 modules/launch_utils.py 代码中获取
 
 USER webui
 
